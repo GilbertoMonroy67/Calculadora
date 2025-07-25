@@ -27,7 +27,7 @@ void menu(){
     cout << "                                              \n";
     cout << "          CALCULADORA DE ECUACIONES           \n\n";
 	
-	cout << "Bienvenido!, por favor, selecciona el tipo de ecuacion a realizar;" <<endl;
+	cout << "Bienvenido!, a continuación los tipos de ecuacion que puedo realizar:" <<endl;
 
     cout<< "1. Ecuacion lineal con una variable  a(x) + b = c" <<endl;
 	cout<< "2. Sistema de ecuaciones con dos variables" <<endl;
