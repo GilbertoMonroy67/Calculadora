@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include <sstream>
-// #include <thread>
-// #include <chrono>
 #include <windows.h>
 
 using namespace std;
@@ -68,7 +66,7 @@ void menu(){
     cout << ""<<endl;
 	cout << "1. Ecuacion lineal con una variable   a(x) + b = c"<<endl;
     cout << "2. Sistema de ecuaciones con dos variables"<<endl;
-    cout << "3. Ecuacion cuadratica"<<endl<<endl;
+    cout << "3. Ecuacion cuadratica ax^2 + bx + c = 0"<<endl<<endl;
     cout << "4. Salir de la calculadora"<<endl<<endl;
     cout << "Selecciona el tipo de ecuacion a solucionar: ";
 }
@@ -82,6 +80,7 @@ int main() {
     cout << "                                              \n";
     cout << "          CALCULADORA DE ECUACIONES           \n\n\n";
     cout << "Bienvenido, a continuacion, el tipo de ecuaciones que puedo realizar:" <<endl<<endl;
+    
 label1:    
 	string continuar ; 
 	int opcion ;	
@@ -92,7 +91,7 @@ label1:
 
         if (!(ss >> opcion) || opcion < 1 || opcion > 4 || !ss.eof()){
             system("cls");
-            cout<<"Opcion no valida. Intente con una opcion del 1 al 4"<<endl;
+            cout<<"Elige una opcion del 1 al 4."<<endl;
             goto label1;
         }
 			
@@ -149,36 +148,23 @@ label1:
                     case 4: 
                         goto label2;
                         
-                    default: 
-                        system("cls");
-                        cout << "Opcion no valida. Intente con una opcion del 1 al 4." <<endl;
-                        goto label1; 
+                    default:
+                    	system("cls");
+                    	cout << "Opcion no valida. Intente con una opcion del 1 al 4." << endl;
+                    	goto label1;
+                        
                         
             } 
             
         } catch (const exception& e) {
             cout << "Ocurrio un error inesperado." <<endl;
-        }
+        } 
 
         cout << "Regresando al menu..." << endl;
-        Sleep(3000);
-
-        cin.ignore();
-        cout << "Deseas realizar otra accion? (si/no): ";
-        getline(cin, continuar);
-
-		if (continuar == "si" || continuar == "Si" || continuar == "s" || continuar == "S" || continuar == "SI") {			
-			system("cls");
-			goto label1; 		
-		} else if(continuar == "no" || continuar == "No" || continuar == "NO" || continuar == "n" || continuar == "N"){
-                goto label2;
-        }else{
-            cout << "\nEntrada no reconocida, regresando al menu..."<<endl;
-            Sleep(3000);
-            system("cls");
-            goto label1;
-        }
-				
+        Sleep(5000);		
+		system("cls");
+		goto label1; 		
+			
 
 label2:
 	system("cls");
